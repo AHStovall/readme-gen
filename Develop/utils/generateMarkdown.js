@@ -1,10 +1,10 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  return `https://img.shields.io/static/v1?label=license&message=${license}&color=blue`
+  return `!{Github license](https://img.shields.io/static/v1?label=license&message=${data.datalicense}&color=brightgreen)`
 }
 
-// TODO: Create a function that returns the license link
+
 // If there is no license, return an empty string
 function renderLicenseLink() {
 return `Copyright (c) 2012-2022 
@@ -29,19 +29,28 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection() {
-  return `## License`
+function generateToC() {
+  `## Table of Contents
+    
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Features](#features)
+  - [How to Contribute](#how-to-contribute)
+  - [Tests](#tests)
+  - [Questions](#questions)`
 }
 
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `#${data.title}\n
+  ${renderLicenseLink()}\n
+  ${generateToC()}
+  
 ##${data.motivation}\n
 ##${data.reasoning}\n
 ##${data.problem}\n
-${renderLicenseLink()}\n
+
 ${renderLicenseBadge(data.license)}\n
 ##${data.learn}\n
 ##${data.steps}\n
